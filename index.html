@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="hr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SmartBrush</title>
 <style>
-:root{--bg:#101713;--panel:#19231d;--panel2:#202d25;--green:#b9f27c;--text:#f1f5ef;--muted:#a6b3a7;--border:#344438}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px Arial,sans-serif}header{padding:20px 5%;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.logo{font-size:22px;font-weight:bold;color:var(--green)}nav{display:flex;gap:5px;flex-wrap:wrap}button{cursor:pointer;border:1px solid var(--border);border-radius:8px;padding:10px 13px;background:var(--panel2);color:var(--text)}nav button.active,button.primary{background:var(--green);color:#172016;border-color:var(--green);font-weight:bold}main{max-width:1100px;margin:auto;padding:38px 20px}.page{display:none}.page.active{display:block}h1{font-size:clamp(36px,6vw,62px);margin:15px 0}h2{font-size:28px}.eyebrow{color:var(--green);letter-spacing:3px;text-transform:uppercase;font-size:12px}.muted,p{color:var(--muted);line-height:1.65}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin:20px 0}.card{padding:21px;background:var(--panel);border:1px solid var(--border);border-radius:14px}.metric{font-size:30px;font-weight:bold;margin:10px 0}.tag{display:inline-block;border-radius:20px;padding:6px 10px;background:#2a3b2b;color:var(--green);font-size:12px}label{display:block;margin:15px 0 7px;color:var(--muted)}input,select,textarea{width:100%;padding:11px;border-radius:8px;background:#111a14;color:var(--text);border:1px solid var(--border);font:inherit}input[type=range]{padding:0;accent-color:var(--green)}.bar{height:9px;background:#354238;border-radius:8px;overflow:hidden;margin-top:12px}.bar div{height:100%;width:0;background:var(--green)}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.row>*{flex:1}#log{background:#101713;border:1px solid var(--border);border-radius:8px;padding:12px;height:150px;overflow:auto;white-space:pre-wrap;font:12px monospace;color:var(--muted)}footer{text-align:center;border-top:1px solid var(--border);padding:25px;color:var(--muted)}small{color:var(--muted)}@media(max-width:600px){main{padding:25px 14px}}
+:root{--bg:#101713;--panel:#19231d;--panel2:#202d25;--green:#b9f27c;--text:#f1f5ef;--muted:#a6b3a7;--border:#344438}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px Arial,sans-serif}header{padding:20px 5%;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.logo{font-size:22px;font-weight:bold;color:var(--green)}nav{display:flex;gap:5px;flex-wrap:wrap}button{cursor:pointer;border:1px solid var(--border);border-radius:8px;padding:10px 13px;background:var(--panel2);color:var(--text)}nav button.active,button.primary{background:var(--green);color:#172016;border-color:var(--green);font-weight:bold}main{max-width:1100px;margin:auto;padding:38px 20px}.page{display:none}.page.active{display:block}h1{font-size:clamp(36px,6vw,62px);margin:15px 0}h2{font-size:28px}.eyebrow{color:var(--green);letter-spacing:3px;text-transform:uppercase;font-size:12px}.muted,p{color:var(--muted);line-height:1.65}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin:20px 0}.card{padding:21px;background:var(--panel);border:1px solid var(--border);border-radius:14px}.metric{font-size:30px;font-weight:bold;margin:10px 0}.tag{display:inline-block;border-radius:20px;padding:6px 10px;background:#2a3b2b;color:var(--green);font-size:12px}label{display:block;margin:15px 0 7px;color:var(--muted)}input,select,textarea{width:100%;padding:11px;border-radius:8px;background:#111a14;color:var(--text);border:1px solid var(--border);font:inherit}input[type=range]{padding:0;accent-color:var(--green)}.bar{height:9px;background:#354238;border-radius:8px;overflow:hidden;margin-top:12px}.bar div{height:100%;width:0;background:var(--green)}.sensor-status-line{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 8px;padding:12px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:10px}.sensor-status-line strong{font-size:14px}.sensor-status-badge{font-size:12px;font-weight:bold;letter-spacing:.7px;padding:7px 11px;border-radius:20px;background:#24452e;color:#b9f27c}.sensor-status-badge.warning{background:#55451f;color:#ffd36b}.sensor-status-badge.danger{background:#542626;color:#ff8585}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.row>*{flex:1}#log{background:#101713;border:1px solid var(--border);border-radius:8px;padding:12px;height:150px;overflow:auto;white-space:pre-wrap;font:12px monospace;color:var(--muted)}footer{text-align:center;border-top:1px solid var(--border);padding:25px;color:var(--muted)}small{color:var(--muted)}@media(max-width:600px){main{padding:25px 14px}}
 
 /* Added SmartBrush photography and gallery styles */
 .image-card{padding:0;overflow:hidden;background:var(--panel);border:1px solid var(--border);border-radius:14px;transition:.25s}
@@ -17,7 +17,7 @@
 
 </style></head><body>
 <header><div class="logo">SmartBrush.</div><nav>
-<button class="active" data-page="home">Home</button><button data-page="about">About Us</button><button data-page="project">Project</button><button data-page="documentation">Documentation</button><button data-page="budget">Budget</button><button data-page="gallery">Gallery</button><button data-page="mydevice">MyDevice</button>
+<button type="button" class="active" data-page="home">Home</button><button data-page="about">About Us</button><button type="button" data-page="project">Project</button><button type="button" data-page="documentation">Documentation</button><button type="button" data-page="budget">Budget</button><button type="button" data-page="gallery">Gallery</button><button type="button" data-page="mydevice">MyDevice</button>
 </nav></header><main>
 <section id="home" class="page active"><span class="eyebrow">Innovation project</span><h1>Technology for a <span style="color:var(--green)">safer future.</span></h1><p>The Smart Brush is an innovative, ergonomic robotic tool designed to safeguard delicate cultural heritage artifacts during restoration and cleaning. By providing real-time visual, acoustic, and haptic pressure feedback, it prevents accidental breakage and empowers conservators, students, and individuals with impaired motor control.</p><img class="image-large" src="images/smartbrush-main.jpg" alt="SmartBrush final prototype"><button class="primary" onclick="showPage('project')">Explore project ↗</button><div class="grid"><div class="card"><h3>Our idea</h3><p>A smart restoration brush equipped with Force Sensitive Resistors (FSR) that continuously monitors applied force, helping users maintain optimal pressure on delicate historical surfaces.</p></div><div class="card"><h3>Development</h3><p>Evolved across five iterations—from non-programmable analog prototypes (Models 1 &amp; 2) to micro-controlled architectures featuring OLED/7-segment displays and Bluetooth connectivity (Models 3, 4-CH, and 4-ESP).</p></div><div class="card"><h3>Our impact</h3><p>Extensively field-tested with museum archaeologists, forensic specialists, and professional art restorers. Reduces artifact damage without automating or replacing human craftsmanship.</p></div></div>
 <h2>Why SmartBrush matters</h2>
@@ -43,216 +43,162 @@
 <p>Potential users include museum and archaeological professionals, restoration workshops, students learning conservation techniques and people who may benefit from additional assistance with fine motor control. The exact warning levels and working technique must always be adapted to the object, material and professional procedure.</p>
 <p>Our goal is to continue improving the prototype through feedback, repeatable tests and careful documentation. We consider the device a support instrument: the experience and responsibility of the conservator remain essential at every stage of the work.</p>
 </section>
-
-
-<section id="project" class="page">
-<span class="eyebrow">The technology</span><h1>The SmartBrush project.</h1>
-<p class="section-intro">SmartBrush combines a familiar restoration brush with electronic pressure measurement and immediate feedback. Its purpose is to help the user notice excessive force while preserving complete manual control of the cleaning process.</p>
-<img class="image-large" src="images/prototype-1.jpg" alt="SmartBrush prototype">
-<h2>How it works</h2>
+<section id="project" class="page"><span class="eyebrow">The idea</span><h1>The project.</h1><p>Restoring delicate objects—such as ancient bones, paper, glass, or ceramics—demands fine pressure control. The Smart Brush combines modular 3D-printed housings, custom PCBs, FSR sensing, and real-time alerts to solve this challenge.</p><div class="grid"><div class="card"><h3>Problem</h3><p>Fragile artifacts are easily damaged during cleaning. Novice conservators, students, or individuals with physical hand injuries or motor impairments frequently struggle with pressure control, risking irreparable loss.</p></div><div class="card"><h3>Solution</h3><p>The Smart Brush measures force in real time. If applied pressure exceeds predefined thresholds, it alerts the user instantly via multi-color RGB LEDs, acoustic buzzers, and subtle haptic vibration motor feedback.</p></div><div class="card"><h3>Technology</h3><p>Powered by Force Sensitive Resistors (FSR), ESP32-WROOM-32 / CH32V203C8T6 microcontrollers, custom PCBs, 3D TinkerCAD housings, interchangeable tips, and AI-assisted sliding-window noise filtering algorithms.</p></div></div><h2>Inside the SmartBrush</h2><p class="section-intro">The device combines sensing, processing, feedback and power electronics in a compact handheld instrument.</p><div class="project-gallery"><div class="image-card"><img src="images/fsr-sensor.jpg" alt="FSR pressure sensor"><div class="image-info"><h3>FSR sensor</h3><p>Measures changes in applied pressure through changes in electrical resistance.</p></div></div><div class="image-card"><img src="images/esp32.jpg" alt="ESP32 microcontroller"><div class="image-info"><h3>ESP32-WROOM-32</h3><p>Processes sensor data and enables Bluetooth Low Energy communication.</p></div></div><div class="image-card"><img src="images/pcb.jpg" alt="SmartBrush PCB"><div class="image-info"><h3>Custom PCB</h3><p>Integrates the electronic components into a compact circuit.</p></div></div><div class="image-card"><img src="images/battery.jpg" alt="Rechargeable battery"><div class="image-info"><h3>Rechargeable battery</h3><p>Provides portable power for the device.</p></div></div><div class="image-card"><img src="images/motor.jpg" alt="Vibration motor"><div class="image-info"><h3>Vibration motor</h3><p>Provides haptic feedback when the user needs a warning.</p></div></div><div class="image-card"><img src="images/housing.jpg" alt="SmartBrush housing"><div class="image-info"><h3>3D-printed housing</h3><p>Holds the electronics and provides an ergonomic form.</p></div></div></div>
+<h2>How the system works</h2>
+<p class="section-intro">SmartBrush follows a continuous measurement-and-feedback cycle. The sensor responds to pressure, the microcontroller reads and processes the signal, and the device communicates the result through the selected feedback outputs.</p>
 <div class="grid">
-<div class="card"><h3>1. Pressure sensing</h3><p>A Force Sensitive Resistor (FSR) responds to the force applied to the brush tip. Its electrical signal changes as pressure changes, allowing the microcontroller to estimate the intensity of contact.</p></div>
-<div class="card"><h3>2. Signal processing</h3><p>The microcontroller reads the sensor, filters or interprets the measured value and compares it with configured thresholds. These thresholds can be adjusted during development and testing.</p></div>
-<div class="card"><h3>3. User feedback</h3><p>When the measured pressure changes, the device can communicate this through visual indicators, sound and vibration. Multiple feedback methods help the user stay focused on the artifact.</p></div>
+<div class="card"><h3>1. Detect</h3><p>The Force Sensitive Resistor (FSR) changes its electrical resistance when force is applied. Connected as part of a voltage divider, this change can be measured as an analogue voltage by the microcontroller's ADC input.</p></div>
+<div class="card"><h3>2. Process</h3><p>The controller samples the sensor and evaluates the readings against a configured threshold. A moving-average filter can reduce short fluctuations, making the displayed value and warning behaviour more stable.</p></div>
+<div class="card"><h3>3. Inform</h3><p>When the measured pressure reaches a warning region, the device can use an RGB indicator, buzzer and vibration motor. Different feedback channels make the warning noticeable without requiring the user to stop and inspect the electronics.</p></div>
 </div>
-<h2>Electronic architecture</h2>
-<p>The prototype uses an ESP32-class microcontroller to coordinate sensor readings and feedback components. The FSR is connected to an analogue input. LEDs or a display can communicate the current pressure level, while a buzzer and vibration motor provide additional warnings. Bluetooth can be used for communication with a phone or computer when supported by the installed firmware.</p>
-<div class="project-gallery">
-<div class="image-card"><img src="images/fsr-sensor.jpg" alt="Force sensitive resistor"><div class="image-info"><h3>FSR sensor</h3><p>Measures changes in force at the working end of the brush.</p></div></div>
-<div class="image-card"><img src="images/esp32.jpg" alt="ESP32 controller"><div class="image-info"><h3>Microcontroller</h3><p>Reads the sensor and controls the feedback components.</p></div></div>
-<div class="image-card"><img src="images/pcb.jpg" alt="SmartBrush circuit board"><div class="image-info"><h3>Electronics</h3><p>The circuit integrates the controller, inputs and outputs.</p></div></div>
-</div>
-<h2>Mechanical design</h2>
-<p>The enclosure is designed around the shape and handling of a brush. The goal is to keep the tool comfortable to hold while protecting the electronics. Openings are planned for the display, buttons and power switch. A modular tip connection makes it possible to replace or adapt the brush attachment without rebuilding the complete electronic device.</p>
-<img class="image-large" src="images/housing.jpg" alt="SmartBrush housing design">
-<h2>Development process</h2>
-<p>Development proceeds through repeated cycles of assembly, measurement and improvement. Each prototype can reveal practical issues that are difficult to identify from a circuit diagram alone: sensor placement, cable routing, enclosure dimensions, button access, weight distribution and the clarity of the warnings.</p>
+<h2>Pressure sensing and calibration</h2>
+<p>FSR sensors are useful for detecting changes in applied force, but they are not precision laboratory force gauges. Their response can vary with the sensor, mounting method, contact area, loading history and the surface beneath the sensor. For that reason, SmartBrush uses relative readings and configurable thresholds rather than claiming a universally accurate force value.</p>
+<p>Before practical use, the sensor should be tested in the final mechanical assembly. The threshold should be selected for the intended brush tip and task, and checked against a safe working procedure. A setting suitable for one material or object may not be suitable for another.</p>
+<h2>Feedback designed for focused work</h2>
+<p>Visual feedback provides an immediate status indication. Acoustic feedback can attract attention when the user is not looking at the device, while haptic feedback can be felt through the handle. Combining these methods allows the user to choose a warning style that suits the environment. For example, a quiet museum workspace may require a lower buzzer volume and greater reliance on visual or vibration feedback.</p>
+<h2>Modular construction</h2>
+<p>The electronics and enclosure are designed as parts of one handheld system. A custom PCB helps organise connections and reduce loose wiring, while a 3D-printed housing protects the components and provides a form that can be held like a conventional brush. The modular approach also makes it easier to revise the enclosure, replace a component or test a different controller.</p>
+<h2>Current development goals</h2>
+<ul><li>Improve the mechanical attachment between the sensor and the brush contact area.</li><li>Make sensor calibration repeatable between prototypes.</li><li>Evaluate warning thresholds with different brush tips and working surfaces.</li><li>Improve battery monitoring and power consumption.</li><li>Keep the control interface simple and make wireless configuration optional.</li></ul>
 </section>
-
-<section id="documentation" class="page">
-<span class="eyebrow">Engineering notes</span><h1>Documentation.</h1>
-<p class="section-intro">This section describes the main engineering elements of SmartBrush. Component selection and exact electrical values may change between prototype revisions, so the final build should always be checked against its own wiring diagram and firmware.</p>
-<h2>Main components</h2>
+<section id="documentation" class="page"><span class="eyebrow">Engineering</span><h1>Documentation.</h1><p>Detailed technical overview of hardware evolution, signal processing algorithms, embedded code structure, and professional field validations.</p><div class="grid" style="margin-bottom:20px;"><div class="card"><h3>Hardware Evolution</h3><p><strong>Models 1 &amp; 2:</strong> Analog FSR sensor, potentiometer threshold, voltage comparator, LED/buzzer alert.<br><strong>Model 3:</strong> Arduino Nano ESP32 (240 MHz), 0.5" OLED, push-button threshold, RGB LED &amp; haptic motor.<br><strong>Model 4-CH:</strong> CH32V203C8T6 (144 MHz), 7-segment display, maximum energy efficiency.<br><strong>Model 4-ESP:</strong> ESP32-WROOM-32 flagship with integrated Bluetooth BLE telemetry and configuration.</p></div><div class="card"><h3>Signal Processing &amp; Software</h3><p>FSR sensor signals are sampled via ADC and processed using a 10-sample sliding-window moving-average filter (`readFSR()`). This noise-filtering algorithm eliminates false spikes caused by high sensor sensitivity. Digital debouncing (`bot()`) handles threshold adjustments.</p></div><div class="card"><h3>Field Validation &amp; Partners</h3><p>Tested on historical skeletal remains and artifacts in collaboration with:<br>• Museum of Croatian Archaeological Monuments (MHAS)<br>• St. Marta Archaeological Site (Kaštela, Croatia)<br>• Faculty of Science Split (PMF) Forensic Team<br>• Croatian Restorers Society (Marko Buljan &amp; Petra Perlain)</p></div></div><div class="card"><label>Documentation link</label><input placeholder="https://..."><small>Ovo polje je samo predložak; poveznica se ne sprema automatski.</small></div>
+<h2>Electronics architecture</h2>
+<p>The electronics are organised around four functional blocks: sensing, processing, feedback and power. The FSR and its measurement circuit provide the input signal. The microcontroller reads the signal and executes the control logic. Output pins drive the indicator, buzzer and vibration motor through suitable driver circuits where required. The battery and charging or regulation circuitry supply the system.</p>
+<p>Separating these functions makes the design easier to test. The sensor can be checked independently from the display or warning outputs, and each controller version can reuse the same general concept while adapting pin assignments and peripheral capabilities.</p>
+<h2>Software structure</h2>
+<p>The embedded program repeatedly reads the analogue sensor input, filters the raw samples, compares the processed value with the selected threshold and updates the outputs. Keeping measurement, filtering, decision-making and output control as separate logical steps makes the program easier to maintain and debug.</p>
 <div class="grid">
-<div class="card"><h3>Force Sensitive Resistor</h3><p>The FSR is the primary sensing element. It is typically read as part of a voltage divider connected to an analogue input. Calibration is necessary because the response depends on the sensor, mounting and contact geometry.</p></div>
-<div class="card"><h3>Microcontroller</h3><p>An ESP32-based board processes the analogue reading and coordinates the output devices. It also provides a possible route for wireless communication with a companion interface.</p></div>
-<div class="card"><h3>Feedback components</h3><p>LEDs, a display, a buzzer and a vibration motor can provide different levels or types of warning. Each output should be tested to ensure that it remains clear without disturbing delicate work.</p></div>
-<div class="card"><h3>Power supply</h3><p>A rechargeable battery can make the brush portable. Voltage regulation and suitable motor-driver circuitry are important to prevent output loads from disturbing the microcontroller.</p></div>
-<div class="card"><h3>Enclosure</h3><p>A 3D-printed housing protects the electronics and provides mounting points for the sensor, controls and replaceable brush tip.</p></div>
-<div class="card"><h3>Firmware</h3><p>The firmware reads the sensor, maps the reading to pressure levels and controls feedback. Thresholds should be established through calibration and repeatable tests.</p></div>
+<div class="card"><h3>Sampling</h3><p>The ADC converts the sensor voltage into a numerical reading. Repeated samples allow the software to observe how the signal changes while the brush is in contact with a surface.</p></div>
+<div class="card"><h3>Filtering</h3><p>A 10-sample moving average, as used in the described implementation, smooths rapid fluctuations. Filtering can improve stability, although it also introduces a small delay that should be considered during calibration.</p></div>
+<div class="card"><h3>Threshold logic</h3><p>The processed value is compared with a configurable limit. The output state is then updated to communicate whether the measured pressure is within the selected range or requires attention.</p></div>
 </div>
-<h2>Testing and calibration</h2>
-<p>Calibration should begin with a stable mechanical setup. Record sensor readings at several repeatable force levels, repeat each measurement and compare the results. Establish warning thresholds only after checking the range and repeatability of the sensor in its final mounting position.</p>
-<p>Useful tests include idle readings, gradual increases in pressure, repeated loading and unloading, long-duration operation, battery operation and tests with each feedback output enabled. The device should also be checked for false warnings caused by movement, loose wiring or electrical noise.</p>
-<div class="project-gallery">
-<div class="image-card"><img src="images/testing.jpg" alt="Testing the prototype"><div class="image-info"><h3>Prototype testing</h3><p>Checking sensor response and feedback behaviour.</p></div></div>
-<div class="image-card"><img src="images/battery.jpg" alt="Battery"><div class="image-info"><h3>Power system</h3><p>Battery and voltage regulation considerations.</p></div></div>
-<div class="image-card"><img src="images/motor.jpg" alt="Vibration motor"><div class="image-info"><h3>Haptic feedback</h3><p>Vibration provides a warning without requiring the user to look away.</p></div></div>
-</div>
-<h2>Safety and limitations</h2>
-<p>SmartBrush is an assistive measurement tool, not an automatic guarantee against damage. Safe pressure depends on the material, condition of the object, brush type and restoration procedure. The professional user must determine appropriate limits and remain responsible for the work. The electronics should be protected from dust, moisture and accidental short circuits.</p>
+<h2>Wireless interface and configuration</h2>
+<p>The ESP32-WROOM-32 version includes Bluetooth Low Energy communication. A compatible browser can connect to the device, request sensor data and send supported configuration commands. The MyDevice page provides controls for reading the sensor state, changing buzzer volume, selecting sensitivity and transferring a firmware file.</p>
+<p>Wireless communication is intended for configuration and monitoring; it does not replace the local pressure-warning function. The device should continue to provide its core feedback directly, without depending on a phone or an internet connection.</p>
+<h2>Testing and validation</h2>
+<p>Testing should include sensor response at different pressure levels, repeatability after repeated loading, stability when the handle is moved, warning response time, battery behaviour and the reliability of the wireless connection. The enclosure should also be checked for comfort, access to controls and protection of the electronic assembly.</p>
+<p>Field observations and prototype demonstrations are valuable for identifying practical issues, but they should not be confused with formal certification or a controlled scientific performance study. Any performance claim should be supported by a documented test method and recorded results.</p>
+<h2>Prototype comparison</h2>
+<p>The first analog versions explored the basic pressure-detection principle with a comparator and simple alerts. Later versions introduced programmable control, more flexible thresholds and additional feedback. The CH32V203C8T6 variant focuses on a compact controller implementation, while the ESP32-WROOM-32 variant adds BLE communication and remote configuration.</p>
 </section>
-
-<section id="budget" class="page">
-<span class="eyebrow">Planning and resources</span><h1>Budget.</h1>
-<p class="section-intro">The budget depends on the selected microcontroller, display, battery, enclosure material and the number of prototypes. The table below is a planning template: enter current supplier prices before using it as a final cost estimate.</p>
-<div class="card">
-<h2>Bill of materials</h2>
-<table style="width:100%;border-collapse:collapse;text-align:left">
-<thead><tr><th style="padding:10px;border-bottom:1px solid var(--border)">Component</th><th style="padding:10px;border-bottom:1px solid var(--border)">Purpose</th><th style="padding:10px;border-bottom:1px solid var(--border)">Estimated cost</th></tr></thead>
-<tbody>
-<tr><td style="padding:10px;border-bottom:1px solid var(--border)">ESP32 board</td><td style="padding:10px;border-bottom:1px solid var(--border)">Main controller</td><td style="padding:10px;border-bottom:1px solid var(--border)">To be entered</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--border)">FSR sensor</td><td style="padding:10px;border-bottom:1px solid var(--border)">Pressure measurement</td><td style="padding:10px;border-bottom:1px solid var(--border)">To be entered</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--border)">Display and LEDs</td><td style="padding:10px;border-bottom:1px solid var(--border)">Visual feedback</td><td style="padding:10px;border-bottom:1px solid var(--border)">To be entered</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--border)">Buzzer and vibration motor</td><td style="padding:10px;border-bottom:1px solid var(--border)">Audio and haptic feedback</td><td style="padding:10px;border-bottom:1px solid var(--border)">To be entered</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--border)">Battery and regulator</td><td style="padding:10px;border-bottom:1px solid var(--border)">Portable power</td><td style="padding:10px;border-bottom:1px solid var(--border)">To be entered</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--border)">PCB and wiring</td><td style="padding:10px;border-bottom:1px solid var(--border)">Electrical assembly</td><td style="padding:10px;border-bottom:1px solid var(--border)">To be entered</td></tr>
-<tr><td style="padding:10px">3D-printed housing and brush tips</td><td style="padding:10px">Mechanical construction</td><td style="padding:10px">To be entered</td></tr>
-</tbody></table>
-<p><small>Note: No supplier prices were included in the provided HTML, so exact totals are intentionally not invented.</small></p>
-</div>
-<h2>Cost optimisation</h2>
-<p>Costs can be controlled by using widely available modules, designing a reusable enclosure, replacing only worn brush tips and testing the circuit on a development board before ordering a custom PCB. A final budget should distinguish one-time development costs from the cost of building each additional unit.</p>
-</section>
-
-<section id="gallery" class="page">
-<span class="eyebrow">Visual development</span><h1>Gallery.</h1>
-<p class="section-intro">A visual overview of the SmartBrush concept, electronics and prototype development. Replace the sample image paths with your actual photographs and renders.</p>
-<div class="project-gallery">
-<div class="image-card"><img src="images/smartbrush-main.jpg" alt="SmartBrush overview"><div class="image-info"><h3>SmartBrush concept</h3><p>The complete tool and its intended use.</p></div></div>
-<div class="image-card"><img src="images/prototype-1.jpg" alt="Prototype one"><div class="image-info"><h3>Early prototype</h3><p>Initial experiments with the sensing concept.</p></div></div>
-<div class="image-card"><img src="images/prototype-2.jpg" alt="Prototype two"><div class="image-info"><h3>Second iteration</h3><p>Refining the physical arrangement and sensor mounting.</p></div></div>
-<div class="image-card"><img src="images/prototype-3.jpg" alt="Prototype three"><div class="image-info"><h3>Electronics integration</h3><p>Combining sensing and feedback electronics.</p></div></div>
-<div class="image-card"><img src="images/prototype-4.jpg" alt="Prototype four"><div class="image-info"><h3>Later prototype</h3><p>Further development of the complete device.</p></div></div>
-<div class="image-card"><img src="images/pcb.jpg" alt="PCB"><div class="image-info"><h3>Printed circuit board</h3><p>Electronic assembly and component layout.</p></div></div>
-<div class="image-card"><img src="images/housing.jpg" alt="Housing"><div class="image-info"><h3>Enclosure design</h3><p>Brush-shaped housing with access to controls.</p></div></div>
-<div class="image-card"><img src="images/testing.jpg" alt="Testing"><div class="image-info"><h3>Testing</h3><p>Evaluating readings and feedback.</p></div></div>
-</div>
-</section>
-
-<section id="mydevice" class="page">
-<span class="eyebrow">Device interface</span><h1>MyDevice.</h1>
-<p class="section-intro">Connect to a compatible SmartBrush over Bluetooth Low Energy (BLE), request the current readings and adjust the supported controls. The ESP32 firmware must expose the matching BLE service and characteristics for these controls to work.</p>
+<section id="budget" class="page"><span class="eyebrow">Costs</span><h1>Budget &amp; Cost Structure.</h1><p>Designed with affordability in mind to ensure widespread access for conservation labs and educational institutions.</p><div class="grid"><div class="card"><h3>Electronics</h3><p>FSR pressure sensors, custom PCBs, microcontrollers (CH32V203 / ESP32), RGB LEDs, buzzers, vibration motors &amp; USB-C charging circuits.</p><div class="metric">Cost-effective</div></div><div class="card"><h3>Materials &amp; Housing</h3><p>3D-printed plastic housing (PLA/PETG), interchangeable brush attachment sockets, and rechargeable ~250 mAh Li-ion batteries.</p><div class="metric">Modular design</div></div><div class="card"><h3>Model Variants</h3><p>Model 4-CH provides the lowest production cost for budget-conscious setups; Model 4-ESP provides flagship Bluetooth connectivity.</p><div class="metric">High value</div></div></div>
+<h2>What determines the cost?</h2>
+<p class="section-intro">The final cost depends on the selected controller, sensor mounting, battery and charging circuit, PCB production method, enclosure material and the number of prototypes produced. A one-off prototype is usually more expensive per unit than a small production batch because development and setup costs are spread across fewer devices.</p>
 <div class="grid">
-<div class="card"><h2>Connection</h2><p id="bleStatus">Not connected</p><button class="primary" id="connectBle" type="button">Connect SmartBrush</button><button id="disconnectBle" type="button" style="margin-left:6px">Disconnect</button><p><small>BLE is supported in compatible browsers, such as Chrome on Android or desktop, when the page is served from a secure context (HTTPS or localhost).</small></p></div>
-<div class="card"><h2>Device data</h2><div class="metric" id="sensorValue">--</div><p>Latest received sensor value</p><div class="bar"><div id="sensorBar"></div></div><p id="deviceInfo">Waiting for device data…</p><button id="requestData" type="button">Request readings</button></div>
+<div class="card"><h3>Electronic components</h3><p>The electronics include the FSR sensor, microcontroller, passive components, RGB indicator, buzzer, vibration motor and power-management parts. The ESP32 version also uses the controller's built-in Bluetooth capability, avoiding the need for a separate wireless module.</p></div>
+<div class="card"><h3>PCB and assembly</h3><p>A custom printed circuit board can make the device more compact and reliable than a prototype assembled with many loose wires. The total depends on board dimensions, copper layers, order quantity and whether assembly is performed manually or by a manufacturer.</p></div>
+<div class="card"><h3>Housing and accessories</h3><p>The enclosure can be produced with common 3D-printing materials such as PLA or PETG. Print time, material usage, supports, finishing and interchangeable brush attachments all contribute to the final cost.</p></div>
+<div class="card"><h3>Power system</h3><p>A rechargeable lithium battery, charging connector, protection and voltage regulation are required for portable operation. Battery capacity should be selected after measuring the actual current consumption of the finished prototype.</p></div>
 </div>
-<div class="grid">
-<div class="card"><h2>Volume</h2><label for="volume">Feedback volume: <span id="volumeLabel">50%</span></label><input id="volume" type="range" min="0" max="100" value="50"><button id="sendVolume" type="button">Send volume</button></div>
-<div class="card"><h2>Pressure level</h2><label for="level">Warning level: <span id="levelLabel">5</span></label><input id="level" type="range" min="1" max="9" value="5"><button id="sendLevel" type="button">Send level</button></div>
-</div>
-<div class="card"><h2>Communication log</h2><div id="log">SmartBrush interface ready.</div></div>
+<h2>Two controller directions</h2>
+<p>The Model 4-CH concept uses the CH32V203C8T6 and is intended as a cost-conscious controller option. The Model 4-ESP uses the ESP32-WROOM-32 and adds Bluetooth Low Energy functionality for telemetry and configuration. The best choice depends on whether wireless control is required for the intended use.</p>
+<h2>Cost planning for future versions</h2>
+<p>A realistic budget should distinguish between development expenses and repeatable unit costs. Development expenses include design time, test materials, failed prints and prototype revisions. Unit costs include the parts and manufacturing steps needed for each finished device. Keeping these categories separate makes it easier to estimate the cost of a future small production run.</p>
+<p>At this stage, the website does not publish fixed prices because component suppliers, order quantities and the final bill of materials may change. A detailed cost table should be completed using verified purchase prices and the exact hardware configuration.</p>
 </section>
-<footer>SmartBrush — technology supporting careful restoration work.</footer>
-
+<section id="gallery" class="page"><span class="eyebrow">Behind the scenes</span><h1>Gallery.</h1><p class="section-intro">A visual journey through the development of SmartBrush, from the first electronic experiments to the final prototypes.</p><h2>Prototype development</h2><div class="project-gallery"><div class="image-card"><img src="images/prototype-1.jpg" alt="First prototype"><div class="image-info"><h3>Prototype 1</h3><p>Initial pressure detection concept.</p></div></div><div class="image-card"><img src="images/prototype-2.jpg" alt="Second prototype"><div class="image-info"><h3>Prototype 2</h3><p>Development of the electronic warning system.</p></div></div><div class="image-card"><img src="images/prototype-3.jpg" alt="Third prototype"><div class="image-info"><h3>Prototype 3</h3><p>Microcontroller integration and improved feedback.</p></div></div><div class="image-card"><img src="images/prototype-4.jpg" alt="Fourth prototype"><div class="image-info"><h3>Prototype 4</h3><p>Advanced electronics and two final controller variants.</p></div></div></div><h2>Electronics and construction</h2><div class="project-gallery"><div class="image-card"><img src="images/pcb.jpg" alt="PCB design"><div class="image-info"><h3>PCB Design</h3><p>Custom circuit board development.</p></div></div><div class="image-card"><img src="images/housing.jpg" alt="3D housing"><div class="image-info"><h3>3D Modelling</h3><p>Designing the brush-shaped enclosure.</p></div></div><div class="image-card"><img src="images/software.jpg" alt="Software development"><div class="image-info"><h3>Software</h3><p>MicroPython development and Bluetooth interface.</p></div></div><div class="image-card"><img src="images/testing.jpg" alt="SmartBrush testing"><div class="image-info"><h3>Testing</h3><p>Testing the device and its electronic functions.</p></div></div></div><h2>Components</h2><div class="project-gallery"><div class="image-card"><img src="images/fsr-sensor.jpg" alt="FSR sensor"><div class="image-info"><h3>FSR sensor</h3></div></div><div class="image-card"><img src="images/battery.jpg" alt="Battery"><div class="image-info"><h3>Rechargeable battery</h3></div></div><div class="image-card"><img src="images/motor.jpg" alt="Vibration motor"><div class="image-info"><h3>Vibration motor</h3></div></div><div class="image-card"><img src="images/esp32.jpg" alt="ESP32 board"><div class="image-info"><h3>ESP32 controller</h3></div></div></div>
+<h2>The development process</h2>
+<p class="section-intro">The gallery documents more than the finished appearance of the device. It should show how the idea developed, what was tested and how the mechanical and electronic parts were gradually brought together.</p>
+<div class="grid">
+<div class="card"><h3>Early experiments</h3><p>The first prototypes were used to investigate the relationship between pressure and the sensor output. Simple analogue circuits made it possible to test the basic warning principle before adding more complex software.</p></div>
+<div class="card"><h3>Electronics integration</h3><p>Later prototypes brought the sensor, controller and feedback components into one system. These stages helped evaluate wiring, component placement, power requirements and the practical size of the electronics.</p></div>
+<div class="card"><h3>Enclosure development</h3><p>3D modelling and printing were used to explore a brush-shaped housing. The enclosure needs to protect the electronics while leaving the controls, charging connection and brush attachment accessible.</p></div>
+</div>
+<h2>What the photographs should demonstrate</h2>
+<p>Prototype photographs are most useful when they show the complete device from more than one angle and include close-up views of the sensor, PCB, battery, controller and feedback components. Images of testing should include a short caption explaining what was being evaluated, rather than showing an unexplained setup.</p>
+<p>As the project continues, this gallery can be updated with new prototype revisions, measurements, assembly stages and demonstrations. Use photographs of the actual SmartBrush hardware wherever possible so that the gallery remains an accurate record of the project.</p>
+</section>
+<section id="mydevice" class="page"><span class="eyebrow">Bluetooth control panel</span><h1>MyDevice.</h1><p>Upravljaj ESP32-WROOM-32 i prati očitanja senzora.</p>
+<div class="card"><div class="row"><div><h3>Device connection</h3><p id="connection">● Not connected</p></div><button id="connect" class="primary">Connect ESP32</button><button id="disconnect">Disconnect</button></div><small>Koristi Chrome/Edge preko localhosta ili HTTPS-a. Uređaj se oglašava kao SmartBrush.</small></div>
+<div class="grid"><div class="card"><h3>Sensor readings</h3><p>FSR value</p><div class="metric" id="fsr">—</div><div class="bar"><div id="fsrBar"></div></div><div class="sensor-status-line"><strong>Sensor reading</strong><span id="sensorStatus" class="sensor-status-badge">WAITING</span></div><p>Threshold</p><div class="metric" id="threshold">—</div><p>State: <span class="tag" id="state">Waiting</span></p></div>
+<div class="card"><h3>Battery</h3><div class="metric"><span id="battery">—</span><span style="font-size:16px"> %</span></div><div class="bar"><div id="batteryBar"></div></div><p><small>Firmware prikazuje NA dok ne konfiguriraš djelitelj napona i ADC pin baterije.</small></p><button id="refresh">Refresh readings</button></div>
+<div class="card"><h3>Buzzer volume</h3><div class="metric"><span id="volLabel">50</span><span style="font-size:16px"> %</span></div><label for="volume">Volume</label><input id="volume" type="range" min="0" max="100" value="50"><small>Promjena se šalje na GPIO25 PWM zujalicu.</small></div>
+<div class="card"><h3>Pressure level</h3><label for="level">Warning level: <strong id="levelLabel">4</strong></label><input id="level" type="range" min="1" max="9" step="1" value="4"><div class="row" style="justify-content:space-between"><small>More sensitive</small><small>Less sensitive</small></div><button id="setLevel" class="primary" style="width:100%;margin-top:12px">Apply warning level</button></div></div>
+<div class="card"><h3>Firmware update: main.py</h3><p>Odaberi novi MicroPython main.py. Ne prekidaj Bluetooth vezu tijekom prijenosa.</p><input type="file" id="firmware" accept=".py"><button id="upload" class="primary" style="margin-top:12px;width:100%">Upload main.py over BLE</button><p id="uploadStatus">No file selected.</p><small>OTA zamjenjuje main.py nakon provjere SHA-256; boot.py i ble OTA servis ostaju odvojeni samo ako ih tvoja instalacija ima.</small></div>
+</section>
+</main><footer>SmartBrush · Innovation Project</footer>
 <script>
-const BLE_SERVICE = '7b8e0001-7a4b-4c2d-9f12-1234567890ab';
-const BLE_CONTROL = '7b8e0002-7a4b-4c2d-9f12-1234567890ab';
-const BLE_DATA = '7b8e0003-7a4b-4c2d-9f12-1234567890ab';
-const BLE_STATUS = '7b8e0004-7a4b-4c2d-9f12-1234567890ab';
-let bleDevice = null, bleServer = null, controlCharacteristic = null, dataCharacteristic = null, statusCharacteristic = null;
-
-function showPage(id) {
-  const target = document.getElementById(id);
-  if (!target || !target.classList.contains('page')) return;
-  document.querySelectorAll('main > .page').forEach(page => page.classList.toggle('active', page === target));
-  document.querySelectorAll('header nav button[data-page]').forEach(button => {
-    const selected = button.dataset.page === id;
-    button.classList.toggle('active', selected);
-    button.setAttribute('aria-current', selected ? 'page' : 'false');
+const SERVICE='7b8e0001-7a4b-4c2d-9f12-1234567890ab', CONTROL='7b8e0002-7a4b-4c2d-9f12-1234567890ab', DATA='7b8e0003-7a4b-4c2d-9f12-1234567890ab', STATUS='7b8e0004-7a4b-4c2d-9f12-1234567890ab';
+let device=null,control=null,dataChar=null,statusChar=null,statusWaiters=[];
+const enc=new TextEncoder(),dec=new TextDecoder();
+function showPage(id){
+  const target=document.getElementById(id);
+  if(!target || !target.classList.contains('page')) return;
+  document.querySelectorAll('main > .page').forEach(page=>{
+    page.classList.toggle('active',page===target);
   });
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  document.querySelectorAll('header nav button[data-page]').forEach(button=>{
+    const selected=button.dataset.page===id;
+    button.classList.toggle('active',selected);
+    button.setAttribute('aria-current',selected?'page':'false');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-window.showPage = showPage;
-
-document.querySelector('header nav').addEventListener('click', event => {
-  const button = event.target.closest('button[data-page]');
-  if (button) { event.preventDefault(); showPage(button.dataset.page); }
+window.showPage=showPage;
+// Event delegation: navigation keeps working even if the page markup changes.
+document.querySelector('header nav').addEventListener('click',function(event){
+  const button=event.target.closest('button[data-page]');
+  if(!button) return;
+  event.preventDefault();
+  showPage(button.dataset.page);
 });
-document.querySelectorAll('[data-page]').forEach(button => {
-  if (button.tagName === 'BUTTON' && !button.closest('nav')) {
-    button.addEventListener('click', () => showPage(button.dataset.page));
-  }
+// Also supports direct links such as index.html#gallery.
+window.addEventListener('hashchange',()=>{
+  const id=location.hash.slice(1);
+  if(id) showPage(id);
 });
-
-function logMessage(message) {
-  const log = document.getElementById('log');
-  if (!log) return;
-  log.textContent += '\\n' + message;
-  log.scrollTop = log.scrollHeight;
+if(location.hash) showPage(location.hash.slice(1));
+function log(s){console.info('[SmartBrush]',s);}
+function setConnected(s){document.getElementById('connection').textContent=s?'● Connected':'● Not connected';}
+function onStatus(s){log('Status: '+s);for(let i=0;i<statusWaiters.length;i++){if(statusWaiters[i].test(s)){let w=statusWaiters.splice(i,1)[0];clearTimeout(w.timer);w.resolve(s);return;}}}
+function waitStatus(test,timeout=5000){return new Promise((resolve,reject)=>{let w={test,resolve,reject,timer:null};w.timer=setTimeout(()=>{statusWaiters=statusWaiters.filter(x=>x!==w);reject(new Error('Timed out waiting for device response'));},timeout);statusWaiters.push(w);});}
+async function writeControl(bytes){if(!control)throw Error('Not connected');await control.writeValue(bytes);}
+async function sendText(s){await writeControl(enc.encode(s+'\n'));log('Sent: '+s);}
+let latestFSR=null,latestThreshold=null,latestFirmwareState='';
+function updateSensorStatus(){
+ const badge=document.getElementById('sensorStatus');
+ if(!badge || latestFSR===null){return;}
+ let state=latestFirmwareState.toUpperCase();
+ let status='SAFE';
+ if(state.includes('DANGER') || state.includes('CRITICAL')) status='DANGER';
+ else if(state.includes('WARNING') || state.includes('WARN')) status='WARNING';
+ else if(latestThreshold!==null && latestThreshold>0){
+   if(latestFSR>=latestThreshold) status='DANGER';
+   else if(latestFSR>=latestThreshold*0.75) status='WARNING';
+ }
+ badge.textContent=status;
+ badge.className='sensor-status-badge'+(status==='WARNING'?' warning':status==='DANGER'?' danger':'');
 }
-function setBleStatus(message) {
-  const el = document.getElementById('bleStatus');
-  if (el) el.textContent = message;
+function parseData(s){
+ let fields={};
+ // Firmware may send one DATA:key=value notification per characteristic update,
+ // or several semicolon-separated fields in one notification.
+ s.trim().split(/[;\r\n]+/).forEach(item=>{
+   let clean=item.trim().replace(/^RX:\s*/, '').replace(/^DATA:/,'');
+   let p=clean.split('=');
+   if(p.length>1) fields[p[0].trim().toUpperCase()]=p.slice(1).join('=').trim();
+ });
+ if(fields.FSR!==undefined){
+   let v=Number(fields.FSR);
+   if(Number.isFinite(v)){latestFSR=v;document.getElementById('fsr').textContent=v;document.getElementById('fsrBar').style.width=Math.max(0,Math.min(100,v/4095*100))+'%';}
+ }
+ if(fields.TH!==undefined){let t=Number(fields.TH);if(Number.isFinite(t)){latestThreshold=t;document.getElementById('threshold').textContent=fields.TH;}}
+ if(fields.STATE){latestFirmwareState=fields.STATE;document.getElementById('state').textContent=fields.STATE;}
+ if(fields.BAT!==undefined){let n=fields.BAT==='NA'?-1:Number(fields.BAT);document.getElementById('battery').textContent=n<0?'—':n;document.getElementById('batteryBar').style.width=(n<0?0:n)+'%';}
+ if(fields.LEVEL){document.getElementById('level').value=fields.LEVEL;document.getElementById('levelLabel').textContent=fields.LEVEL;}
+ if(fields.VOL!==undefined){document.getElementById('volume').value=fields.VOL;document.getElementById('volLabel').textContent=fields.VOL;}
+ updateSensorStatus();
 }
-function decodeValue(value) {
-  try { return new TextDecoder().decode(value).replace(/\\0/g, '').trim(); }
-  catch (_) { return String(value); }
-}
-function handleIncoming(event) {
-  const value = decodeValue(event.target.value);
-  document.getElementById('deviceInfo').textContent = value || 'Empty response';
-  const numeric = Number((value.match(/-?\\d+(?:\\.\\d+)?/) || [])[0]);
-  if (Number.isFinite(numeric)) {
-    document.getElementById('sensorValue').textContent = numeric;
-    document.getElementById('sensorBar').style.width = Math.max(0, Math.min(100, numeric)) + '%';
-  }
-  logMessage('RX: ' + value);
-}
-async function connectBle() {
-  if (!navigator.bluetooth) {
-    setBleStatus('Web Bluetooth is not available in this browser.');
-    logMessage('BLE unavailable. Try Chrome and HTTPS/localhost.');
-    return;
-  }
-  try {
-    setBleStatus('Selecting device…');
-    bleDevice = await navigator.bluetooth.requestDevice({
-      filters: [{services: [BLE_SERVICE]}],
-      optionalServices: [BLE_SERVICE]
-    });
-    bleDevice.addEventListener('gattserverdisconnected', () => {
-      bleServer = null; controlCharacteristic = null;
-      setBleStatus('Disconnected'); logMessage('BLE disconnected.');
-    });
-    bleServer = await bleDevice.gatt.connect();
-    const service = await bleServer.getPrimaryService(BLE_SERVICE);
-    controlCharacteristic = await service.getCharacteristic(BLE_CONTROL);
-    try {
-      dataCharacteristic = await service.getCharacteristic(BLE_DATA);
-      await dataCharacteristic.startNotifications();
-      dataCharacteristic.addEventListener('characteristicvaluechanged', handleIncoming);
-    } catch (e) { logMessage('Data notifications unavailable: ' + e.message); }
-    try {
-      statusCharacteristic = await service.getCharacteristic(BLE_STATUS);
-      await statusCharacteristic.startNotifications();
-      statusCharacteristic.addEventListener('characteristicvaluechanged', handleIncoming);
-    } catch (e) { logMessage('Status notifications unavailable: ' + e.message); }
-    setBleStatus('Connected to ' + (bleDevice.name || 'SmartBrush'));
-    logMessage('Connected: ' + (bleDevice.name || 'SmartBrush'));
-  } catch (error) {
-    setBleStatus('Connection failed');
-    logMessage('BLE error: ' + error.message);
-  }
-}
-async function sendCommand(command) {
-  if (!controlCharacteristic) { logMessage('Not connected. Connect to SmartBrush first.'); return; }
-  try {
-    const data = new TextEncoder().encode(command);
-    if (controlCharacteristic.writeValueWithResponse) await controlCharacteristic.writeValueWithResponse(data);
-    else await controlCharacteristic.writeValue(data);
-    logMessage('TX: ' + command);
-  } catch (error) { logMessage('Send error: ' + error.message); }
-}
-document.getElementById('connectBle').addEventListener('click', connectBle);
-document.getElementById('disconnectBle').addEventListener('click', () => {
-  if (bleDevice && bleDevice.gatt.connected) bleDevice.gatt.disconnect();
-  setBleStatus('Disconnected');
-});
-document.getElementById('requestData').addEventListener('click', () => sendCommand('GET'));
-document.getElementById('volume').addEventListener('input', e => document.getElementById('volumeLabel').textContent = e.target.value + '%');
-document.getElementById('level').addEventListener('input', e => document.getElementById('levelLabel').textContent = e.target.value);
-document.getElementById('sendVolume').addEventListener('click', () => sendCommand('VOL:' + document.getElementById('volume').value));
-document.getElementById('sendLevel').addEventListener('click', () => sendCommand('LEVEL:' + document.getElementById('level').value));
-</script>
-</body></html>
+async function connect(){try{device=await navigator.bluetooth.requestDevice({filters:[{services:[SERVICE]}]});device.addEventListener('gattserverdisconnected',()=>{control=dataChar=statusChar=null;setConnected(false);log('Disconnected');});let server=await device.gatt.connect();let svc=await server.getPrimaryService(SERVICE);control=await svc.getCharacteristic(CONTROL);dataChar=await svc.getCharacteristic(DATA);statusChar=await svc.getCharacteristic(STATUS);await dataChar.startNotifications();await statusChar.startNotifications();dataChar.addEventListener('characteristicvaluechanged',e=>parseData(dec.decode(e.target.value)));statusChar.addEventListener('characteristicvaluechanged',e=>onStatus(dec.decode(e.target.value)));setConnected(true);log('Connected to '+(device.name||'ESP32'));await sendText('GET');}catch(e){setConnected(false);log('Connection error: '+e.message);}}
+document.getElementById('connect').onclick=()=>{if(!navigator.bluetooth){alert('Web Bluetooth nije podržan. Otvori u Chromeu ili Edgeu preko localhosta/HTTPS-a.');return;}connect();};
+document.getElementById('disconnect').onclick=()=>{if(device?.gatt?.connected)device.gatt.disconnect();};
+document.getElementById('refresh').onclick=()=>sendText('GET').catch(e=>log(e.message));
+document.getElementById('volume').addEventListener('input',e=>document.getElementById('volLabel').textContent=e.target.value);
+document.getElementById('volume').addEventListener('change',e=>sendText('VOL:'+e.target.value).catch(x=>log(x.message)));
+document.getElementById('level').addEventListener('input',e=>document.getElementById('levelLabel').textContent=e.target.value);
+document.getElementById('setLevel').onclick=()=>sendText('LEVEL:'+document.getElementById('level').value).catch(e=>log(e.message));
+document.getElementById('firmware').onchange=e=>{let f=e.target.files[0];document.getElementById('uploadStatus').textContent=f?`${f.name} — ${f.size} bytes`:'No file selected.';};
+async function uploadFirmware(){const file=document.getElementById('firmware').files[0];if(!file){alert('Prvo odaberi main.py');return;}if(!control||!dataChar||!statusChar){alert('Prvo poveži ESP32 preko Bluetootha.');return;}if(!crypto.subtle){alert('SHA-256 zahtijeva secure context: localhost ili HTTPS.');return;}let btn=document.getElementById('upload'),st=document.getElementById('uploadStatus');btn.disabled=true;try{let bytes=new Uint8Array(await file.arrayBuffer());let hash=new Uint8Array(await crypto.subtle.digest('SHA-256',bytes));st.textContent='Starting transfer…';let ready=waitStatus(s=>s==='READY'||s.startsWith('ERROR:'),8000);let start=new Uint8Array(5);start[0]=83;new DataView(start.buffer).setUint32(1,bytes.length,true);await writeControl(start);let r=await ready;if(r.startsWith('ERROR:'))throw Error(r);for(let off=0;off<bytes.length;off+=20){let chunk=bytes.slice(off,Math.min(off+20,bytes.length));let expected=off+chunk.length;let ack=waitStatus(s=>s==='ACK:'+expected||s.startsWith('ERROR:'),8000);await dataChar.writeValue(chunk);let a=await ack;if(a.startsWith('ERROR:'))throw Error(a);st.textContent=`Transferring… ${Math.round(expected/bytes.length*100)}%`;}
+let h0=waitStatus(s=>s==='HASH0'||s.startsWith('ERROR:'),5000);await writeControl(new Uint8Array([72,48,...hash.slice(0,16)]));let h0r=await h0;if(h0r.startsWith('ERROR:'))throw Error(h0r);let h1=waitStatus(s=>s==='HASH1'||s.startsWith('ERROR:'),5000);await writeControl(new Uint8Array([72,49,...hash.slice(16,32)]));let h1r=await h1;if(h1r.startsWith('ERROR:'))throw Error(h1r);st.textContent='Checking SHA-256 and replacing main.py…';let done=waitStatus(s=>s==='OK:REBOOTING'||s.startsWith('ERROR:'),15000);await writeControl(new Uint8Array([69]));let result=await done;if(result.startsWith('ERROR:'))throw Error(result);st.textContent='Update verified. ESP32 is rebooting.';log('Firmware update successful.');}catch(e){st.textContent='Update failed: '+e.message;log('OTA error: '+e.message);}finally{btn.disabled=false;}}
+document.getElementById('upload').onclick=uploadFirmware;
+</script></body></html>
