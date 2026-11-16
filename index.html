@@ -41,6 +41,21 @@
 img {
     max-width: 100%;
 }
+.download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--green);
+    color: #172016;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
 </style></head><body>
 <header><div class="logo">SmartBrush.</div><nav>
 <button type="button" class="active" data-page="home">Home</button><button data-page="about">About Us</button><button type="button" data-page="project">Project</button><button type="button" data-page="documentation">Documentation</button><button type="button" data-page="budget">Budget</button><button type="button" data-page="gallery">Gallery</button><button type="button" data-page="mydevice">MyDevice</button>
@@ -87,7 +102,7 @@ img {
 <h2>Current development goals</h2>
 <ul><li>Improve the mechanical attachment between the sensor and the brush contact area.</li><li>Make sensor calibration repeatable between prototypes.</li><li>Evaluate warning thresholds with different brush tips and working surfaces.</li><li>Improve battery monitoring and power consumption.</li><li>Keep the control interface simple and make wireless configuration optional.</li></ul>
 </section>
-<section id="documentation" class="page"><span class="eyebrow">Engineering</span><h1>Documentation.</h1><p>Detailed technical overview of hardware evolution, signal processing algorithms, embedded code structure, and professional field validations.</p><div class="grid" style="margin-bottom:20px;"><div class="card"><h3>Hardware Evolution</h3><p><strong>Models 1 &amp; 2:</strong> Analog FSR sensor, potentiometer threshold, voltage comparator, LED/buzzer alert.<br><strong>Model 3:</strong> Arduino Nano ESP32 (240 MHz), 0.5" OLED, push-button threshold, RGB LED &amp; haptic motor.<br><strong>Model 4-CH:</strong> CH32V203C8T6 (144 MHz), 7-segment display, maximum energy efficiency.<br><strong>Model 4-ESP:</strong> ESP32-WROOM-32 flagship with integrated Bluetooth BLE telemetry and configuration.</p></div><div class="card"><h3>Signal Processing &amp; Software</h3><p>FSR sensor signals are sampled via ADC and processed using a 10-sample sliding-window moving-average filter (`readFSR()`). This noise-filtering algorithm eliminates false spikes caused by high sensor sensitivity. Digital debouncing (`bot()`) handles threshold adjustments.</p></div><div class="card"><h3>Field Validation &amp; Partners</h3><p>Tested on historical skeletal remains and artifacts in collaboration with:<br>• Museum of Croatian Archaeological Monuments (MHAS)<br>• St. Marta Archaeological Site (Kaštela, Croatia)<br>• Faculty of Science Split (PMF) Forensic Team<br>• Croatian Restorers Society (Marko Buljan &amp; Petra Perlain)</p></div></div><div class="card"><label>Documentation link</label><input placeholder="https://..."><small>Ovo polje je samo predložak; poveznica se ne sprema automatski.</small></div>
+<section id="documentation" class="page"><span class="eyebrow">Engineering</span><h1>Documentation.</h1><p>Detailed technical overview of hardware evolution, signal processing algorithms, embedded code structure, and professional field validations.</p><div class="grid" style="margin-bottom:20px;"><div class="card"><h3>Hardware Evolution</h3><p><strong>Models 1 &amp; 2:</strong> Analog FSR sensor, potentiometer threshold, voltage comparator, LED/buzzer alert.<br><strong>Model 3:</strong> Arduino Nano ESP32 (240 MHz), 0.5" OLED, push-button threshold, RGB LED &amp; haptic motor.<br><strong>Model 4-CH:</strong> CH32V203C8T6 (144 MHz), 7-segment display, maximum energy efficiency.<br><strong>Model 4-ESP:</strong> ESP32-WROOM-32 flagship with integrated Bluetooth BLE telemetry and configuration.</p></div><div class="card"><h3>Signal Processing &amp; Software</h3><p>FSR sensor signals are sampled via ADC and processed using a 10-sample sliding-window moving-average filter (`readFSR()`). This noise-filtering algorithm eliminates false spikes caused by high sensor sensitivity. Digital debouncing (`bot()`) handles threshold adjustments.</p></div><div class="card"><h3>Field Validation &amp; Partners</h3><p>Tested on historical skeletal remains and artifacts in collaboration with:<br>• Museum of Croatian Archaeological Monuments (MHAS)<br>• St. Marta Archaeological Site (Kaštela, Croatia)<br>• Faculty of Science Split (PMF) Forensic Team<br>• Croatian Restorers Society (Marko Buljan &amp; Petra Perlain)</p></div></div><div class="card"><label>Documentation link</label><a href="tehnicke\Smart_Brush_Technical_Documentation_WRO_Final_New (1).pdf" download class="download-btn">Download Tehnical Documentation</a></div>
 <h2>Electronics architecture</h2>
 <p>The electronics are organised around four functional blocks: sensing, processing, feedback and power. The FSR and its measurement circuit provide the input signal. The microcontroller reads the signal and executes the control logic. Output pins drive the indicator, buzzer and vibration motor through suitable driver circuits where required. The battery and charging or regulation circuitry supply the system.</p>
 <p>Separating these functions makes the design easier to test. The sensor can be checked independently from the display or warning outputs, and each controller version can reuse the same general concept while adapting pin assignments and peripheral capabilities.</p>
