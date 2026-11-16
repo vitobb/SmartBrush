@@ -14,7 +14,33 @@
 .project-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:25px 0}
 .section-intro{margin:15px 0 25px;max-width:850px}
 @media(max-width:600px){.image-card img{height:190px}}
+/* FIX ALL SMARTBRUSH IMAGES */
+.image-card img {
+    width: 100%;
+    height: 250px;
+    max-width: 100%;
+    object-fit: contain !important;
+    display: block;
+    margin: 0 auto;
+}
 
+.image-large {
+    width: 100%;
+    height: 350px;
+    max-height: 350px;
+    object-fit: contain !important;
+    display: block;
+    margin: 22px auto;
+}
+
+.project-gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+}
 </style></head><body>
 <header><div class="logo">SmartBrush.</div><nav>
 <button type="button" class="active" data-page="home">Home</button><button data-page="about">About Us</button><button type="button" data-page="project">Project</button><button type="button" data-page="documentation">Documentation</button><button type="button" data-page="budget">Budget</button><button type="button" data-page="gallery">Gallery</button><button type="button" data-page="mydevice">MyDevice</button>
